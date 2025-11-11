@@ -77,6 +77,6 @@ To get the frontend application running on your local machine, please follow the
 
 ## Author
 
-*   **Name:** Meeran
-*   **Contact:** meerandeen25@gmail.com
+*   **Name:** Your Name
+*   **Contact:** your.email@example.com
 

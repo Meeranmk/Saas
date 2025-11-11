@@ -1,10 +1,27 @@
-
 import React, { useState, FormEvent } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import Card from '../components/ui/Card';
+
+const Logo: React.FC<{ className?: string }> = ({ className = 'h-10 w-auto' }) => (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M8 8V16H16V8H8Z"
+        className="text-primary-500 fill-current opacity-75"
+      />
+      <path
+        d="M6 6V18H18V6H6ZM8 8H16V16H8V8Z"
+        className="text-primary-500 fill-current"
+      />
+    </svg>
+  );
 
 const Register: React.FC = () => {
   const [name, setName] = useState('');
@@ -30,15 +47,18 @@ const Register: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 px-4">
-      <div className="w-full max-w-md">
-        <div className="text-center mb-8">
-            <svg className="mx-auto h-12 w-auto text-primary-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <h2 className="mt-6 text-3xl font-extrabold text-gray-900 dark:text-white">Create a new account</h2>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-gray-900 px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-md space-y-8">
+        <div className="text-center">
+          <Logo className="mx-auto h-12 w-auto" />
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-white">
+            Create your account
+          </h2>
+           <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
+            to start your journey with SaaSBoard
+          </p>
         </div>
-        <Card>
+        <Card className="!p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             <Input
               id="name"
@@ -67,13 +87,15 @@ const Register: React.FC = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-             {error && <p className="text-red-500 text-sm">{error}</p>}
-            <Button type="submit" isLoading={isLoading} fullWidth>
-              Register
-            </Button>
+             {error && <p className="text-red-500 text-sm text-center">{error}</p>}
+            <div>
+              <Button type="submit" isLoading={isLoading} fullWidth>
+                Create Account
+              </Button>
+            </div>
           </form>
         </Card>
-        <p className="mt-6 text-center text-sm text-gray-600 dark:text-gray-400">
+        <p className="text-center text-sm text-gray-600 dark:text-gray-400">
             Already have an account?{' '}
             <Link to="/login" className="font-medium text-primary-600 hover:text-primary-500">
                 Sign in

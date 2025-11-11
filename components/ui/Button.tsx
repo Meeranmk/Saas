@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Spinner from './Spinner';
 
@@ -10,7 +9,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: React.FC<ButtonProps> = ({ children, className = '', isLoading = false, variant = 'primary', fullWidth = false, ...props }) => {
-  const baseClasses = "inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200";
+  const baseClasses = "inline-flex items-center justify-center px-4 py-2.5 border border-transparent text-sm font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200";
   
   const variantClasses = {
     primary: 'text-white bg-primary-600 hover:bg-primary-700 focus:ring-primary-500',
