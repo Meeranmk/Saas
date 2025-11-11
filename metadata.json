@@ -1,0 +1,5 @@
+{
+  "name": "Copy of SaaS Subscription Dashboard",
+  "description": "A mini SaaS admin dashboard that allows users to subscribe to a plan, view their active plan, and manage their profile with a clean and responsive UI.",
+  "requestFramePermissions": []
+}
